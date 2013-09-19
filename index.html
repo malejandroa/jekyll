@@ -1,0 +1,28 @@
+
+---
+layout: Default 
+---
+
+
+<h1>Home</h1>
+<p>kldfjg gkk kfjg gkl;k</p>
+
+
+    <ul>
+    	
+   		{% for dino in site.pages %}<!--loop in all pages the site.pages and find...-->
+        	{% if dino.category ==  "dino" %}                       <!--gets category...-->
+        <li>
+            <strong>{{dino.name}}T-Rex</strong><!--gets name...-->
+            {{dino.content}}
+            <p>description...</p>
+            <dl>
+                <dt>Size</dl><dd>{{dino.size}}</dd>
+                <dt>Colour</dl><dd>{{dino.colour}}</dd>
+                <dt>Food Type</dl><dd>{{dino.type}}</dd>
+            </dl> 
+            
+        </li>
+       		{% endif %}
+    	{% endfor %}
+    </ul>
