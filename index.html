@@ -1,28 +1,24 @@
-
 ---
-layout: Default 
+layout: default
 ---
 
+<h1>Dinosaurs!</h1>
+<p>Dinosaurs are super rockin’!</p>
 
-<h1>Home</h1>
-<p>kldfjg gkk kfjg gkl;k</p>
+<h2>Carnivores</h2>
+<ul>
+  {% for dino in site.pages %}
+    {% if dino.category == "carnivore" %}
+      <li>{{dino.name}}</li>
+    {% endif %}
+  {% endfor %}
+</ul>
 
-
-    <ul>
-    	
-   		{% for dino in site.pages %}<!--loop in all pages the site.pages and find...-->
-        	{% if dino.category ==  "dino" %}                       <!--gets category...-->
-        <li>
-            <strong>{{dino.name}}T-Rex</strong><!--gets name...-->
-            {{dino.content}}
-            <p>description...</p>
-            <dl>
-                <dt>Size</dl><dd>{{dino.size}}</dd>
-                <dt>Colour</dl><dd>{{dino.colour}}</dd>
-                <dt>Food Type</dl><dd>{{dino.type}}</dd>
-            </dl> 
-            
-        </li>
-       		{% endif %}
-    	{% endfor %}
-    </ul>
+<h2>Herbivores</h2>
+<ul>
+  {% for dino in site.pages %}
+    {% if dino.category == "herbivore" %}
+      <li>{{dino.name}}</li>
+    {% endif %}
+  {% endfor %}
+</ul>
